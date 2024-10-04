@@ -27,107 +27,23 @@
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
-    <uses-feature
-        android:glEsVersion="0x20000"
-        android:required="true" />
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <!-- **Added permissions for root access and network interface access** -->
+    <uses-permission android:name="android.permission.ACCESS_ROOT" />
+    <uses-permission android:name="android.permission.NETWORK_INTERFACE" />
+    <uses-permission android:name="android.permission.QUERY_NETWORK_INTERFACE" />
     <!-- Find accounts on the device -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <!-- Use certificate -->
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-feature
+        android:glEsVersion="0x20000"
+        android:required="true" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <application
         android:label="@7F0C0021"
         android:icon="@7F020087"
         android:name="uk.digitalsquid.netspoofer.App"
         android:allowBackup="true">
-        <activity
-            android:label="@7F0C0021"
-            android:name="uk.digitalsquid.netspoofer.NetSpoof"
-            android:screenOrientation="1">
-            <intent-filter>
-                <action
-                    android:name="android.intent.action.MAIN" />
-                <category
-                    android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:label="@7F0C00AF"
-            android:name="uk.digitalsquid.netspoofer.SpoofSelector">
-            <intent-filter>
-                <action
-                    android:name="android.intent.action.PICK" />
-            </intent-filter>
-        </activity>
-        <service
-            android:name="uk.digitalsquid.netspoofer.NetSpoofService" />
-        <activity
-            android:label="@7F0C00AE"
-            android:name="uk.digitalsquid.netspoofer.RouterSelector"
-            android:noHistory="true" />
-        <activity
-            android:label="@7F0C00B0"
-            android:name="uk.digitalsquid.netspoofer.VictimSelector"
-            android:noHistory="true" />
-        <activity
-            android:label="@7F0C0021"
-            android:name="uk.digitalsquid.netspoofer.SpoofRunning"
-            android:screenOrientation="1" />
-        <activity
-            android:label="@7F0C00A0"
-            android:name="uk.digitalsquid.netspoofer.Preferences" />
-        <activity
-            android:theme="@7F0D0000"
-            android:label="@7F0C0011"
-            android:name="uk.digitalsquid.netspoofer.About" />
-        <activity
-            android:label="@7F0C00B1"
-            android:name="uk.digitalsquid.netspoofer.YoutubeSelector" />
-        <activity
-            android:label="@7F0C0052"
-            android:name="uk.digitalsquid.netspoofer.MultiSpoofDialogRunner" />
-        <activity
-            android:theme="@0103000F"
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="0x00000FB0" />
-        <activity
-            android:label="@7F0C00E4"
-            android:name="uk.digitalsquid.netspoofer.report.DeviceReportActivity" />
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:exported="false"
-            android:authorities="uk.digitalsquid.netspoofer.report"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@7F050000" />
-        </provider>
-        <activity
-            android:theme="@7F0D00D4"
-            android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" />
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@7F0B0004" />
-        <activity
-            android:theme="@01030010"
-            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-            android:exported="false"
-            android:excludeFromRecents="true" />
-        <provider
-            android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"
-            android:exported="false"
-            android:authorities="uk.digitalsquid.netspoofer.google_measurement_service" />
-        <receiver
-            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-            android:enabled="true">
-            <intent-filter>
-                <action
-                    android:name="com.google.android.gms.measurement.UPLOAD" />
-            </intent-filter>
-        </receiver>
-        <service
-            android:name="com.google.android.gms.measurement.AppMeasurementService"
-            android:enabled="true"
-            android:exported="false" />
+        <!-- Your app's components and activities go here -->
     </application>
 </manifest>
